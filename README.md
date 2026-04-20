@@ -35,17 +35,23 @@ Documentación interactiva disponible en: http://localhost:8000/docs
 
 ## Tu misión
 
-Esta API contiene comportamientos incorrectos. Tu tarea es:
+Esta API tiene **3 comportamientos incorrectos**. Tu tarea es:
 
-1. Identificar todos los problemas en el código.
-2. Corregirlos.
-3. Verificar tus correcciones ejecutando los tests:
+1. Identificar y corregir los 3 problemas.
+2. Verificar tus correcciones ejecutando los tests:
 
 ```bash
 python -m pytest tests/ -v
 ```
 
 Los 3 tests deben pasar para completar el desafío.
+
+### Pistas
+
+- Hay **2 bugs en la capa de repositorio** (`app/repositories/`).
+- Hay **1 bug en la capa de rutas** (`app/routers/`).
+- La API arranca sin errores y los endpoints responden — los problemas son de comportamiento, no de sintaxis.
+- Usa `/docs` para explorar y probar los endpoints manualmente.
 
 **No se permite el uso de inteligencia artificial.**
 
