@@ -4,11 +4,12 @@ from sqlalchemy.orm import Session
 from app.dependencies import get_db
 from app.schemas.task import TaskCreate, TaskResponse, TaskUpdate
 from app.services import task_service
+from starlette import status
 
 router = APIRouter()
 
 
-@router.post("/", response_model=TaskResponse)
+@router.post("/", response_model=TaskResponse, status_code=status.HTTP_201_CREATED)
 def create_task(payload: TaskCreate, db: Session = Depends(get_db)):
     return task_service.create_task(db, payload.model_dump())
 
