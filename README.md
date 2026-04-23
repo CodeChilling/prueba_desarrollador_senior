@@ -71,8 +71,8 @@ app/
 
 ## Solución
 
-- Se agregó el codigo de respuesta HTTP 201 al endpoint de crear tareas. Dado que no se estaba especificando un código de respuesta por defecto y no se respetaba el estado HTTP correcto (201 recurso creado).
+- Se agregó el codigo de respuesta HTTP 201 al endpoint de crear tareas. Dado que no se estaba especificando un código de respuesta por defecto y no se respetaba el estado HTTP correcto (201 recurso creado). (POST /tasks/).
 
-- Se cambió la lógica del filtro por estatus en el repositorio de tareas. Ahora se filtra por estado == status y se ordenan por prioridad. Antes se usaba el operador != que devolvía todas las tareas excepto las venian de la query (status), al cambiar el operador por == se aplica el filtro deseado.
+- Se cambió la lógica del filtro por estatus en el repositorio de tareas. Ahora se filtra por estado == status y se ordenan por prioridad. Antes se usaba el operador != que devolvía todas las tareas excepto las venian de la query (status), al cambiar el operador por == se aplica el filtro deseado. (GET /tasks/).
 
-- Se corrigió el orden al actualizar una tarea (PATCH /tasks/{id}). Antes se ejecutaba db.refresh(task) y luego db.commit(). Ahora se ejecuta primero el commit y luego el refresh para que se reflejen correctamente los cambios. De este modo primero se guardan los cambios y luego se recuperan los datos actualizados.
+- Se corrigió el orden al actualizar una tarea. Antes se ejecutaba db.refresh(task) y luego db.commit(). Ahora se ejecuta primero el commit y luego el refresh para que se reflejen correctamente los cambios. De este modo primero se guardan los cambios y luego se recuperan los datos actualizados. (PATCH /tasks/{id})
